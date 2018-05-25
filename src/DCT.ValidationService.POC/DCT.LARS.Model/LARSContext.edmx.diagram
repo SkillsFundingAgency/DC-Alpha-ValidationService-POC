@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4e5e99db7627493d9172970a6b14948b" Name="Diagram1">
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_AnnualValue" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_ApprenticeshipFunding" Width="1.5" PointX="8.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_DataGeneration" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_Framework" Width="1.5" PointX="5.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_FrameworkAims" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_FrameworkCmnComp" Width="1.5" PointX="10.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_FrameworkMetaData" Width="1.5" PointX="10.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_Funding" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_LearningDelivery" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_LearningDeliveryCategory" Width="1.5" PointX="3" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_Section96" Width="1.5" PointX="3" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_Standard" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_StandardAims" Width="1.5" PointX="6" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_StandardCommonComponent" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_StandardFunding" Width="1.5" PointX="6" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_StandardMetaData" Width="1.5" PointX="10.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_StandardPdfLink" Width="1.5" PointX="12.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_StandardValidity" Width="1.5" PointX="6" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_SupersedingAims" Width="1.5" PointX="3" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_SupersedingFrameworks" Width="1.5" PointX="8" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_UnitQualificationRelationship" Width="1.5" PointX="12.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_Validity" Width="1.5" PointX="3" PointY="36.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DCT.LARS.Model.LARS_Version" Width="1.5" PointX="12.75" PointY="11.125" IsExpanded="true" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreAnnualValue_CoreLearningDelivery" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreSupersedingFrameworks_CoreFramework_New" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreSupersedingFrameworks_CoreFramework_Old" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreFrameworkAims_CoreLearningDelivery" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreFunding_CoreLearningDelivery" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreLearningDeliveryCategory_CoreLearningDelivery" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreSection96_CoreLearningDelivery" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreStandardAims_CoreLearningDelivery" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreSupersedingAims_CoreLearningDelivery" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreSupersedingAims_CoreLearningDelivery1" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreValidity_CoreLearningDelivery" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreStandardAims_CoreStandard" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreStandardCommonComponent_CoreStandard" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreStandardFunding_CoreStandard" ManuallyRouted="false" />
+        <AssociationConnector Association="DCT.LARS.Model.FK_CoreStandardValidity_CoreStandard" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

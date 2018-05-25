@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BusinessRules.POC.RuleLearnDelFAMType66.LearnDelFAMType66Validator">
+    <Position X="6.5" Y="2" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAACAAAAAABAAAAAACAAAAABAAgAAAAABAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\LearnDelFAMType66Validator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BusinessRules.POC.Interfaces.IRule&lt;T&gt;">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessRules.POC.Interfaces.ISharedRule&lt;T, TResult&gt;">
+    <Position X="6.25" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ISharedRule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessRules.POC.Interfaces.IShortRule&lt;T, TResult&gt;">
+    <Position X="6.25" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IShortRule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessRules.POC.Interfaces.IShortRule&lt;T&gt;">
+    <Position X="4" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IShortRule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessRules.POC.Interfaces.IResultable&lt;TResult&gt;">
+    <Position X="4" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IResultable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

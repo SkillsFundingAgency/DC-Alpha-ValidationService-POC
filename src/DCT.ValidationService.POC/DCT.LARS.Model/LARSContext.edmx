@@ -1,0 +1,2093 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DCT.LARS.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LARS_AnnualValue">
+          <Key>
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="LearnAimRef" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="BasicSkills" Type="int" />
+          <Property Name="BasicSkillsBroadType" Type="int" />
+          <Property Name="BasicSkillsType" Type="int" />
+          <Property Name="BasicSkillsParticipation" Type="int" />
+          <Property Name="FullLevel2EntitlementCategory" Type="int" />
+          <Property Name="FullLevel2Percent" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="FullLevel3EntitlementCategory" Type="int" />
+          <Property Name="FullLevel3Percent" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="MI_FullLevel2" Type="int" />
+          <Property Name="MI_FullLevel2Percent" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="MI_FullLevel3" Type="int" />
+          <Property Name="MI_FullLevel3Percent" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="OfQualValid19Plus" Type="int" />
+          <Property Name="SfaApprovalStatus" Type="int" />
+          <Property Name="UKCESSector" Type="int" />
+          <Property Name="UKCESSubSector" Type="varchar" MaxLength="2" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_ApprenticeshipFunding">
+          <Key>
+            <PropertyRef Name="ApprenticeshipType" />
+            <PropertyRef Name="ApprenticeshipCode" />
+            <PropertyRef Name="ProgType" />
+            <PropertyRef Name="PwayCode" />
+            <PropertyRef Name="FundingCategory" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="ApprenticeshipType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApprenticeshipCode" Type="int" Nullable="false" />
+          <Property Name="ProgType" Type="int" Nullable="false" />
+          <Property Name="PwayCode" Type="int" Nullable="false" />
+          <Property Name="FundingCategory" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="BandNumber" Type="int" />
+          <Property Name="CoreGovContributionCap" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="1618Incentive" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="1618ProviderAdditionalPayment" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="1618EmployerAdditionalPayment" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="1618FrameworkUplift" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="Duration" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="ReservedValue2" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="ReservedValue3" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="MaxEmployerLevyCap" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="FundableWithoutEmployer" Type="char" MaxLength="1" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_DataGeneration">
+          <Key>
+            <PropertyRef Name="DataGeneratedOn" />
+          </Key>
+          <Property Name="DataGeneratedOn" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="Comment" Type="varchar" MaxLength="500" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_Framework">
+          <Key>
+            <PropertyRef Name="FworkCode" />
+            <PropertyRef Name="ProgType" />
+            <PropertyRef Name="PwayCode" />
+          </Key>
+          <Property Name="FworkCode" Type="int" Nullable="false" />
+          <Property Name="ProgType" Type="int" Nullable="false" />
+          <Property Name="PwayCode" Type="int" Nullable="false" />
+          <Property Name="PathwayName" Type="varchar" MaxLength="256" />
+          <Property Name="EffectiveFrom" Type="date" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="SectorSubjectAreaTier1" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="SectorSubjectAreaTier2" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="DataSource" Type="varchar" MaxLength="150" />
+          <Property Name="NASTitle" Type="varchar" MaxLength="750" />
+          <Property Name="ImplementDate" Type="date" />
+          <Property Name="IssuingAuthorityTitle" Type="varchar" MaxLength="256" />
+          <Property Name="IssuingAuthority" Type="varchar" MaxLength="15" />
+          <Property Name="DataReceivedDate" Type="date" />
+          <Property Name="MI_FullLevel2" Type="int" />
+          <Property Name="MI_FullLevel2Percent" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="MI_FullLevel3" Type="int" />
+          <Property Name="MI_FullLevel3Percent" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="CurrentVersion" Type="varchar" MaxLength="10" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_FrameworkAims">
+          <Key>
+            <PropertyRef Name="FworkCode" />
+            <PropertyRef Name="ProgType" />
+            <PropertyRef Name="PwayCode" />
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="FworkCode" Type="int" Nullable="false" />
+          <Property Name="ProgType" Type="int" Nullable="false" />
+          <Property Name="PwayCode" Type="int" Nullable="false" />
+          <Property Name="LearnAimRef" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="FrameworkComponentType" Type="int" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_FrameworkCmnComp">
+          <Key>
+            <PropertyRef Name="FworkCode" />
+            <PropertyRef Name="ProgType" />
+            <PropertyRef Name="PwayCode" />
+            <PropertyRef Name="CommonComponent" />
+          </Key>
+          <Property Name="FworkCode" Type="int" Nullable="false" />
+          <Property Name="ProgType" Type="int" Nullable="false" />
+          <Property Name="PwayCode" Type="int" Nullable="false" />
+          <Property Name="CommonComponent" Type="int" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="MinLevel" Type="char" MaxLength="1" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_FrameworkMetaData">
+          <Key>
+            <PropertyRef Name="FworkCode" />
+            <PropertyRef Name="ProgType" />
+            <PropertyRef Name="PwayCode" />
+          </Key>
+          <Property Name="FworkCode" Type="int" Nullable="false" />
+          <Property Name="ProgType" Type="int" Nullable="false" />
+          <Property Name="PwayCode" Type="int" Nullable="false" />
+          <Property Name="Roles" Type="nvarchar(max)" />
+          <Property Name="Keywords" Type="nvarchar(max)" />
+          <Property Name="EffectiveFrom" Type="date" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_Funding">
+          <Key>
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="FundingCategory" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="LearnAimRef" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="FundingCategory" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="RateWeighted" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="RateUnWeighted" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="WeightingFactor" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_LearningDelivery">
+          <Key>
+            <PropertyRef Name="LearnAimRef" />
+          </Key>
+          <Property Name="LearnAimRef" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="LearnAimRefTitle" Type="varchar" MaxLength="254" />
+          <Property Name="LearnAimRefType" Type="varchar" MaxLength="4" />
+          <Property Name="NotionalNVQLevel" Type="char" MaxLength="1" />
+          <Property Name="NotionalNVQLevelv2" Type="varchar" MaxLength="5" />
+          <Property Name="AwardOrgAimRef" Type="varchar" MaxLength="50" />
+          <Property Name="CertificationEndDate" Type="date" />
+          <Property Name="OperationalStartDate" Type="date" />
+          <Property Name="OperationalEndDate" Type="date" />
+          <Property Name="EnglandFEHEStatus" Type="char" MaxLength="1" />
+          <Property Name="CreditBasedFwkType" Type="int" />
+          <Property Name="QltyAssAgencyType" Type="int" />
+          <Property Name="OfQualGlhMin" Type="int" />
+          <Property Name="OfQualGlhMax" Type="int" />
+          <Property Name="DiplomaLinesOfLearning" Type="varchar" MaxLength="5" />
+          <Property Name="FrameworkCommonComponent" Type="int" />
+          <Property Name="LTRCPWithProviderUpliftFactor" Type="int" />
+          <Property Name="EntrySubLevel" Type="varchar" MaxLength="8" />
+          <Property Name="SuccessRateMapCode" Type="varchar" MaxLength="8" />
+          <Property Name="AccreditiedNotDfESApproved" Type="int" />
+          <Property Name="AccreditiedMayPossDfESApproved" Type="int" />
+          <Property Name="JointInvestmentProgrammeOnly" Type="int" />
+          <Property Name="OLASSOnly" Type="int" />
+          <Property Name="UnemployedOnly" Type="int" />
+          <Property Name="IndependentLivingSkills" Type="int" />
+          <Property Name="AdditionalOrSpecialistLearning" Type="int" />
+          <Property Name="EnglPrscID" Type="int" />
+          <Property Name="Vocational" Type="int" />
+          <Property Name="AwardOrgCode" Type="varchar" MaxLength="20" />
+          <Property Name="UnitType" Type="varchar" MaxLength="50" />
+          <Property Name="LearningDeliveryGenre" Type="varchar" MaxLength="3" />
+          <Property Name="ApprovedEmployerSchemeFramework" Type="int" />
+          <Property Name="FrameworkCompletionClassCode" Type="int" />
+          <Property Name="OfQualOfferedEngland" Type="int" />
+          <Property Name="OfqualPurpose" Type="varchar" MaxLength="2" />
+          <Property Name="OfqualSubPurpose" Type="varchar" MaxLength="4" />
+          <Property Name="RgltnStartDate" Type="date" />
+          <Property Name="SourceQualType" Type="varchar" MaxLength="15" />
+          <Property Name="SourceSystemRef" Type="varchar" MaxLength="50" />
+          <Property Name="SourceURLRef" Type="varchar" MaxLength="50" />
+          <Property Name="SourceURLLinkType" Type="int" />
+          <Property Name="OccupationalIndicator" Type="int" />
+          <Property Name="AccessHEIndicator" Type="int" />
+          <Property Name="KeySkillsIndicator" Type="int" />
+          <Property Name="FunctionalSkillsIndicator" Type="int" />
+          <Property Name="GCEIndicator" Type="int" />
+          <Property Name="GCSEIndicator" Type="int" />
+          <Property Name="ASLevelIndicator" Type="int" />
+          <Property Name="A2LevelIndicator" Type="int" />
+          <Property Name="ALevelIndicator" Type="int" />
+          <Property Name="QCFIndicator" Type="int" />
+          <Property Name="QCFDiplomaIndicator" Type="int" />
+          <Property Name="QCFCertificateIndicator" Type="int" />
+          <Property Name="EFAEnglishGCSE" Type="int" />
+          <Property Name="EFAMathsGCSE" Type="int" />
+          <Property Name="EFACOFType" Type="int" />
+          <Property Name="SFAFundedIndicator" Type="int" />
+          <Property Name="DanceAndDramaIndicator" Type="int" />
+          <Property Name="AvailabiltyStatus" Type="int" />
+          <Property Name="Note" Type="varchar(max)" />
+          <Property Name="LearnDirectClassSystemCode1" Type="varchar" MaxLength="12" />
+          <Property Name="LearnDirectClassSystemCode2" Type="varchar" MaxLength="12" />
+          <Property Name="LearnDirectClassSystemCode3" Type="varchar" MaxLength="12" />
+          <Property Name="RegulatedCreditValue" Type="int" />
+          <Property Name="SectorSubjectAreaTier1" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="SectorSubjectAreaTier2" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="MI_NotionalNVQLevel" Type="int" />
+          <Property Name="MI_NotionalNVQLevelv2" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="GuidedLearningHours" Type="int" />
+          <Property Name="DirectStudyHours" Type="int" />
+          <Property Name="DedicatedAssessmentHours" Type="int" />
+          <Property Name="TotalQualificationTime" Type="int" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_LearningDeliveryCategory">
+          <Key>
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="CategoryRef" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="LearnAimRef" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="CategoryRef" Type="int" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_Section96">
+          <Key>
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="LearnAimRef" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="Section96ApprovalStatus" Type="int" />
+          <Property Name="Section96ApprovalStartDate" Type="date" />
+          <Property Name="Section96ReviewDate" Type="date" />
+          <Property Name="Section96ValidPre16" Type="int" />
+          <Property Name="Section96Valid16to18" Type="int" />
+          <Property Name="Section96Valid18plus" Type="int" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_Standard">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+          </Key>
+          <Property Name="StandardCode" Type="int" Nullable="false" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="StandardName" Type="varchar" MaxLength="256" />
+          <Property Name="StandardSectorCode" Type="varchar" MaxLength="25" />
+          <Property Name="NotionalEndLevel" Type="varchar" MaxLength="5" />
+          <Property Name="EffectiveFrom" Type="date" />
+          <Property Name="LastDateStarts" Type="date" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="URLLink" Type="varchar" MaxLength="1200" />
+          <Property Name="SectorSubjectAreaTier1" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="SectorSubjectAreaTier2" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="IntegratedDegreeStandard" Type="char" MaxLength="1" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_StandardAims">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="StandardCode" Type="int" Nullable="false" />
+          <Property Name="LearnAimRef" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="StandardComponentType" Type="int" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_StandardCommonComponent">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+            <PropertyRef Name="CommonComponent" />
+          </Key>
+          <Property Name="StandardCode" Type="int" Nullable="false" />
+          <Property Name="CommonComponent" Type="int" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="MinLevel" Type="char" MaxLength="1" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_StandardFunding">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+            <PropertyRef Name="FundingCategory" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="StandardCode" Type="int" Nullable="false" />
+          <Property Name="FundingCategory" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="BandNumber" Type="int" />
+          <Property Name="CoreGovContributionCap" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="1618Incentive" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="SmallBusinessIncentive" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="AchievementIncentive" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="FundableWithoutEmployer" Type="varchar" MaxLength="50" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_StandardMetaData">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+          </Key>
+          <Property Name="StandardCode" Type="int" Nullable="false" />
+          <Property Name="RoleOverview" Type="nvarchar(max)" />
+          <Property Name="JobRoles" Type="nvarchar(max)" />
+          <Property Name="Keywords" Type="nvarchar(max)" />
+          <Property Name="EntryRequirements" Type="nvarchar(max)" />
+          <Property Name="Learning" Type="nvarchar(max)" />
+          <Property Name="Qualifications" Type="nvarchar(max)" />
+          <Property Name="ProfessionalRegistration" Type="nvarchar(max)" />
+          <Property Name="EffectiveFrom" Type="date" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_StandardPdfLink">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="StandardCode" Type="int" Nullable="false" />
+          <Property Name="StandardPdfURL" Type="nvarchar(max)" />
+          <Property Name="AssessmentPlanPdfURL" Type="nvarchar(max)" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_StandardValidity">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+            <PropertyRef Name="ValidityCategory" />
+            <PropertyRef Name="StartDate" />
+          </Key>
+          <Property Name="StandardCode" Type="int" Nullable="false" />
+          <Property Name="ValidityCategory" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="LastNewStartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_SupersedingAims">
+          <Key>
+            <PropertyRef Name="OldLearnAimRef" />
+            <PropertyRef Name="NewLearnAimRef" />
+          </Key>
+          <Property Name="OldLearnAimRef" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="NewLearnAimRef" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_SupersedingFrameworks">
+          <Key>
+            <PropertyRef Name="OldFworkCode" />
+            <PropertyRef Name="OldProgType" />
+            <PropertyRef Name="OldPwayCode" />
+            <PropertyRef Name="NewFworkCode" />
+            <PropertyRef Name="NewProgType" />
+            <PropertyRef Name="NewPwayCode" />
+          </Key>
+          <Property Name="OldFworkCode" Type="int" Nullable="false" />
+          <Property Name="OldProgType" Type="int" Nullable="false" />
+          <Property Name="OldPwayCode" Type="int" Nullable="false" />
+          <Property Name="NewFworkCode" Type="int" Nullable="false" />
+          <Property Name="NewProgType" Type="int" Nullable="false" />
+          <Property Name="NewPwayCode" Type="int" Nullable="false" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_UnitQualificationRelationship">
+          <Key>
+            <PropertyRef Name="UnitLearnAimRef" />
+            <PropertyRef Name="QualificationLearnAimRef" />
+          </Key>
+          <Property Name="UnitLearnAimRef" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="QualificationLearnAimRef" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="date" Nullable="false" />
+          <Property Name="EffectiveTo" Type="date" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_Validity">
+          <Key>
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="ValidityCategory" />
+            <PropertyRef Name="StartDate" />
+          </Key>
+          <Property Name="LearnAimRef" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="ValidityCategory" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="LastNewStartDate" Type="date" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_Version">
+          <Key>
+            <PropertyRef Name="MajorNumber" />
+            <PropertyRef Name="MinorNumber" />
+            <PropertyRef Name="MaintenanceNumber" />
+          </Key>
+          <Property Name="MajorNumber" Type="int" Nullable="false" />
+          <Property Name="MinorNumber" Type="int" Nullable="false" />
+          <Property Name="MaintenanceNumber" Type="int" Nullable="false" />
+          <Property Name="MainDataSchemaName" Type="varchar" MaxLength="256" />
+          <Property Name="RefDataSchemaName" Type="varchar" MaxLength="256" />
+          <Property Name="ActivationDate" Type="date" Nullable="false" />
+          <Property Name="ExpiryDate" Type="date" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="Comment" Type="varchar" MaxLength="500" />
+          <Property Name="Created_On" Type="datetime" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modified_On" Type="datetime" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CoreAnnualValue_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_AnnualValue" Type="Self.LARS_AnnualValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_AnnualValue">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreFrameworkAims_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_FrameworkAims" Type="Self.LARS_FrameworkAims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_FrameworkAims">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreFunding_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_Funding" Type="Self.LARS_Funding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_Funding">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreLearningDeliveryCategory_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_LearningDeliveryCategory" Type="Self.LARS_LearningDeliveryCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_LearningDeliveryCategory">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreSection96_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_Section96" Type="Self.LARS_Section96" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_Section96">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreStandardAims_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_StandardAims" Type="Self.LARS_StandardAims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_StandardAims">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreStandardAims_CoreStandard">
+          <End Role="LARS_Standard" Type="Self.LARS_Standard" Multiplicity="1" />
+          <End Role="LARS_StandardAims" Type="Self.LARS_StandardAims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_Standard">
+              <PropertyRef Name="StandardCode" />
+            </Principal>
+            <Dependent Role="LARS_StandardAims">
+              <PropertyRef Name="StandardCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreStandardCommonComponent_CoreStandard">
+          <End Role="LARS_Standard" Type="Self.LARS_Standard" Multiplicity="1" />
+          <End Role="LARS_StandardCommonComponent" Type="Self.LARS_StandardCommonComponent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_Standard">
+              <PropertyRef Name="StandardCode" />
+            </Principal>
+            <Dependent Role="LARS_StandardCommonComponent">
+              <PropertyRef Name="StandardCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreStandardFunding_CoreStandard">
+          <End Role="LARS_Standard" Type="Self.LARS_Standard" Multiplicity="1" />
+          <End Role="LARS_StandardFunding" Type="Self.LARS_StandardFunding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_Standard">
+              <PropertyRef Name="StandardCode" />
+            </Principal>
+            <Dependent Role="LARS_StandardFunding">
+              <PropertyRef Name="StandardCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreStandardValidity_CoreStandard">
+          <End Role="LARS_Standard" Type="Self.LARS_Standard" Multiplicity="1" />
+          <End Role="LARS_StandardValidity" Type="Self.LARS_StandardValidity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_Standard">
+              <PropertyRef Name="StandardCode" />
+            </Principal>
+            <Dependent Role="LARS_StandardValidity">
+              <PropertyRef Name="StandardCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreSupersedingAims_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_SupersedingAims" Type="Self.LARS_SupersedingAims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_SupersedingAims">
+              <PropertyRef Name="OldLearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreSupersedingAims_CoreLearningDelivery1">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_SupersedingAims" Type="Self.LARS_SupersedingAims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_SupersedingAims">
+              <PropertyRef Name="NewLearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreSupersedingFrameworks_CoreFramework_New">
+          <End Role="LARS_Framework" Type="Self.LARS_Framework" Multiplicity="1" />
+          <End Role="LARS_SupersedingFrameworks" Type="Self.LARS_SupersedingFrameworks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_Framework">
+              <PropertyRef Name="FworkCode" />
+              <PropertyRef Name="ProgType" />
+              <PropertyRef Name="PwayCode" />
+            </Principal>
+            <Dependent Role="LARS_SupersedingFrameworks">
+              <PropertyRef Name="NewFworkCode" />
+              <PropertyRef Name="NewProgType" />
+              <PropertyRef Name="NewPwayCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreSupersedingFrameworks_CoreFramework_Old">
+          <End Role="LARS_Framework" Type="Self.LARS_Framework" Multiplicity="1" />
+          <End Role="LARS_SupersedingFrameworks" Type="Self.LARS_SupersedingFrameworks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_Framework">
+              <PropertyRef Name="FworkCode" />
+              <PropertyRef Name="ProgType" />
+              <PropertyRef Name="PwayCode" />
+            </Principal>
+            <Dependent Role="LARS_SupersedingFrameworks">
+              <PropertyRef Name="OldFworkCode" />
+              <PropertyRef Name="OldProgType" />
+              <PropertyRef Name="OldPwayCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreValidity_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_Validity" Type="Self.LARS_Validity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_Validity">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DCTLARSModelStoreContainer">
+          <EntitySet Name="LARS_AnnualValue" EntityType="Self.LARS_AnnualValue" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_ApprenticeshipFunding" EntityType="Self.LARS_ApprenticeshipFunding" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_DataGeneration" EntityType="Self.LARS_DataGeneration" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_Framework" EntityType="Self.LARS_Framework" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_FrameworkAims" EntityType="Self.LARS_FrameworkAims" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_FrameworkCmnComp" EntityType="Self.LARS_FrameworkCmnComp" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_FrameworkMetaData" EntityType="Self.LARS_FrameworkMetaData" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_Funding" EntityType="Self.LARS_Funding" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_LearningDelivery" EntityType="Self.LARS_LearningDelivery" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_LearningDeliveryCategory" EntityType="Self.LARS_LearningDeliveryCategory" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_Section96" EntityType="Self.LARS_Section96" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_Standard" EntityType="Self.LARS_Standard" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_StandardAims" EntityType="Self.LARS_StandardAims" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_StandardCommonComponent" EntityType="Self.LARS_StandardCommonComponent" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_StandardFunding" EntityType="Self.LARS_StandardFunding" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_StandardMetaData" EntityType="Self.LARS_StandardMetaData" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_StandardPdfLink" EntityType="Self.LARS_StandardPdfLink" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_StandardValidity" EntityType="Self.LARS_StandardValidity" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_SupersedingAims" EntityType="Self.LARS_SupersedingAims" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_SupersedingFrameworks" EntityType="Self.LARS_SupersedingFrameworks" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_UnitQualificationRelationship" EntityType="Self.LARS_UnitQualificationRelationship" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_Validity" EntityType="Self.LARS_Validity" Schema="Core" store:Type="Tables" />
+          <EntitySet Name="LARS_Version" EntityType="Self.LARS_Version" Schema="Core" store:Type="Tables" />
+          <AssociationSet Name="FK_CoreAnnualValue_CoreLearningDelivery" Association="Self.FK_CoreAnnualValue_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_AnnualValue" EntitySet="LARS_AnnualValue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreFrameworkAims_CoreLearningDelivery" Association="Self.FK_CoreFrameworkAims_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_FrameworkAims" EntitySet="LARS_FrameworkAims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreFunding_CoreLearningDelivery" Association="Self.FK_CoreFunding_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_Funding" EntitySet="LARS_Funding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreLearningDeliveryCategory_CoreLearningDelivery" Association="Self.FK_CoreLearningDeliveryCategory_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_LearningDeliveryCategory" EntitySet="LARS_LearningDeliveryCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreSection96_CoreLearningDelivery" Association="Self.FK_CoreSection96_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_Section96" EntitySet="LARS_Section96" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreStandardAims_CoreLearningDelivery" Association="Self.FK_CoreStandardAims_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_StandardAims" EntitySet="LARS_StandardAims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreStandardAims_CoreStandard" Association="Self.FK_CoreStandardAims_CoreStandard">
+            <End Role="LARS_Standard" EntitySet="LARS_Standard" />
+            <End Role="LARS_StandardAims" EntitySet="LARS_StandardAims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreStandardCommonComponent_CoreStandard" Association="Self.FK_CoreStandardCommonComponent_CoreStandard">
+            <End Role="LARS_Standard" EntitySet="LARS_Standard" />
+            <End Role="LARS_StandardCommonComponent" EntitySet="LARS_StandardCommonComponent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreStandardFunding_CoreStandard" Association="Self.FK_CoreStandardFunding_CoreStandard">
+            <End Role="LARS_Standard" EntitySet="LARS_Standard" />
+            <End Role="LARS_StandardFunding" EntitySet="LARS_StandardFunding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreStandardValidity_CoreStandard" Association="Self.FK_CoreStandardValidity_CoreStandard">
+            <End Role="LARS_Standard" EntitySet="LARS_Standard" />
+            <End Role="LARS_StandardValidity" EntitySet="LARS_StandardValidity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreSupersedingAims_CoreLearningDelivery" Association="Self.FK_CoreSupersedingAims_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_SupersedingAims" EntitySet="LARS_SupersedingAims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreSupersedingAims_CoreLearningDelivery1" Association="Self.FK_CoreSupersedingAims_CoreLearningDelivery1">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_SupersedingAims" EntitySet="LARS_SupersedingAims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreSupersedingFrameworks_CoreFramework_New" Association="Self.FK_CoreSupersedingFrameworks_CoreFramework_New">
+            <End Role="LARS_Framework" EntitySet="LARS_Framework" />
+            <End Role="LARS_SupersedingFrameworks" EntitySet="LARS_SupersedingFrameworks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreSupersedingFrameworks_CoreFramework_Old" Association="Self.FK_CoreSupersedingFrameworks_CoreFramework_Old">
+            <End Role="LARS_Framework" EntitySet="LARS_Framework" />
+            <End Role="LARS_SupersedingFrameworks" EntitySet="LARS_SupersedingFrameworks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreValidity_CoreLearningDelivery" Association="Self.FK_CoreValidity_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_Validity" EntitySet="LARS_Validity" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DCT.LARS.Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="LARS_AnnualValue">
+          <Key>
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="LearnAimRef" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="BasicSkills" Type="Int32" />
+          <Property Name="BasicSkillsBroadType" Type="Int32" />
+          <Property Name="BasicSkillsType" Type="Int32" />
+          <Property Name="BasicSkillsParticipation" Type="Int32" />
+          <Property Name="FullLevel2EntitlementCategory" Type="Int32" />
+          <Property Name="FullLevel2Percent" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="FullLevel3EntitlementCategory" Type="Int32" />
+          <Property Name="FullLevel3Percent" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="MI_FullLevel2" Type="Int32" />
+          <Property Name="MI_FullLevel2Percent" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="MI_FullLevel3" Type="Int32" />
+          <Property Name="MI_FullLevel3Percent" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="OfQualValid19Plus" Type="Int32" />
+          <Property Name="SfaApprovalStatus" Type="Int32" />
+          <Property Name="UKCESSector" Type="Int32" />
+          <Property Name="UKCESSubSector" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_LearningDelivery" Relationship="Self.FK_CoreAnnualValue_CoreLearningDelivery" FromRole="LARS_AnnualValue" ToRole="LARS_LearningDelivery" />
+        </EntityType>
+        <EntityType Name="LARS_ApprenticeshipFunding">
+          <Key>
+            <PropertyRef Name="ApprenticeshipType" />
+            <PropertyRef Name="ApprenticeshipCode" />
+            <PropertyRef Name="ProgType" />
+            <PropertyRef Name="PwayCode" />
+            <PropertyRef Name="FundingCategory" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="ApprenticeshipType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ApprenticeshipCode" Type="Int32" Nullable="false" />
+          <Property Name="ProgType" Type="Int32" Nullable="false" />
+          <Property Name="PwayCode" Type="Int32" Nullable="false" />
+          <Property Name="FundingCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="BandNumber" Type="Int32" />
+          <Property Name="CoreGovContributionCap" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="C1618Incentive" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="C1618ProviderAdditionalPayment" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="C1618EmployerAdditionalPayment" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="C1618FrameworkUplift" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="Duration" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="ReservedValue2" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="ReservedValue3" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="MaxEmployerLevyCap" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="FundableWithoutEmployer" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_DataGeneration">
+          <Key>
+            <PropertyRef Name="DataGeneratedOn" />
+          </Key>
+          <Property Name="DataGeneratedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_Framework">
+          <Key>
+            <PropertyRef Name="FworkCode" />
+            <PropertyRef Name="ProgType" />
+            <PropertyRef Name="PwayCode" />
+          </Key>
+          <Property Name="FworkCode" Type="Int32" Nullable="false" />
+          <Property Name="ProgType" Type="Int32" Nullable="false" />
+          <Property Name="PwayCode" Type="Int32" Nullable="false" />
+          <Property Name="PathwayName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="SectorSubjectAreaTier1" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="SectorSubjectAreaTier2" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="DataSource" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="NASTitle" Type="String" MaxLength="750" FixedLength="false" Unicode="false" />
+          <Property Name="ImplementDate" Type="DateTime" Precision="0" />
+          <Property Name="IssuingAuthorityTitle" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="IssuingAuthority" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DataReceivedDate" Type="DateTime" Precision="0" />
+          <Property Name="MI_FullLevel2" Type="Int32" />
+          <Property Name="MI_FullLevel2Percent" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="MI_FullLevel3" Type="Int32" />
+          <Property Name="MI_FullLevel3Percent" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="CurrentVersion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_SupersedingFrameworks" Relationship="Self.FK_CoreSupersedingFrameworks_CoreFramework_New" FromRole="LARS_Framework" ToRole="LARS_SupersedingFrameworks" />
+          <NavigationProperty Name="LARS_SupersedingFrameworks1" Relationship="Self.FK_CoreSupersedingFrameworks_CoreFramework_Old" FromRole="LARS_Framework" ToRole="LARS_SupersedingFrameworks" />
+        </EntityType>
+        <EntityType Name="LARS_FrameworkAims">
+          <Key>
+            <PropertyRef Name="FworkCode" />
+            <PropertyRef Name="ProgType" />
+            <PropertyRef Name="PwayCode" />
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="FworkCode" Type="Int32" Nullable="false" />
+          <Property Name="ProgType" Type="Int32" Nullable="false" />
+          <Property Name="PwayCode" Type="Int32" Nullable="false" />
+          <Property Name="LearnAimRef" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="FrameworkComponentType" Type="Int32" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_LearningDelivery" Relationship="Self.FK_CoreFrameworkAims_CoreLearningDelivery" FromRole="LARS_FrameworkAims" ToRole="LARS_LearningDelivery" />
+        </EntityType>
+        <EntityType Name="LARS_FrameworkCmnComp">
+          <Key>
+            <PropertyRef Name="FworkCode" />
+            <PropertyRef Name="ProgType" />
+            <PropertyRef Name="PwayCode" />
+            <PropertyRef Name="CommonComponent" />
+          </Key>
+          <Property Name="FworkCode" Type="Int32" Nullable="false" />
+          <Property Name="ProgType" Type="Int32" Nullable="false" />
+          <Property Name="PwayCode" Type="Int32" Nullable="false" />
+          <Property Name="CommonComponent" Type="Int32" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="MinLevel" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_FrameworkMetaData">
+          <Key>
+            <PropertyRef Name="FworkCode" />
+            <PropertyRef Name="ProgType" />
+            <PropertyRef Name="PwayCode" />
+          </Key>
+          <Property Name="FworkCode" Type="Int32" Nullable="false" />
+          <Property Name="ProgType" Type="Int32" Nullable="false" />
+          <Property Name="PwayCode" Type="Int32" Nullable="false" />
+          <Property Name="Roles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EffectiveFrom" Type="DateTime" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_Funding">
+          <Key>
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="FundingCategory" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="LearnAimRef" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FundingCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="RateWeighted" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="RateUnWeighted" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="WeightingFactor" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_LearningDelivery" Relationship="Self.FK_CoreFunding_CoreLearningDelivery" FromRole="LARS_Funding" ToRole="LARS_LearningDelivery" />
+        </EntityType>
+        <EntityType Name="LARS_LearningDelivery">
+          <Key>
+            <PropertyRef Name="LearnAimRef" />
+          </Key>
+          <Property Name="LearnAimRef" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="LearnAimRefTitle" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Name="LearnAimRefType" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="NotionalNVQLevel" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NotionalNVQLevelv2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="AwardOrgAimRef" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CertificationEndDate" Type="DateTime" Precision="0" />
+          <Property Name="OperationalStartDate" Type="DateTime" Precision="0" />
+          <Property Name="OperationalEndDate" Type="DateTime" Precision="0" />
+          <Property Name="EnglandFEHEStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreditBasedFwkType" Type="Int32" />
+          <Property Name="QltyAssAgencyType" Type="Int32" />
+          <Property Name="OfQualGlhMin" Type="Int32" />
+          <Property Name="OfQualGlhMax" Type="Int32" />
+          <Property Name="DiplomaLinesOfLearning" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FrameworkCommonComponent" Type="Int32" />
+          <Property Name="LTRCPWithProviderUpliftFactor" Type="Int32" />
+          <Property Name="EntrySubLevel" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="SuccessRateMapCode" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="AccreditiedNotDfESApproved" Type="Int32" />
+          <Property Name="AccreditiedMayPossDfESApproved" Type="Int32" />
+          <Property Name="JointInvestmentProgrammeOnly" Type="Int32" />
+          <Property Name="OLASSOnly" Type="Int32" />
+          <Property Name="UnemployedOnly" Type="Int32" />
+          <Property Name="IndependentLivingSkills" Type="Int32" />
+          <Property Name="AdditionalOrSpecialistLearning" Type="Int32" />
+          <Property Name="EnglPrscID" Type="Int32" />
+          <Property Name="Vocational" Type="Int32" />
+          <Property Name="AwardOrgCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UnitType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LearningDeliveryGenre" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedEmployerSchemeFramework" Type="Int32" />
+          <Property Name="FrameworkCompletionClassCode" Type="Int32" />
+          <Property Name="OfQualOfferedEngland" Type="Int32" />
+          <Property Name="OfqualPurpose" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="OfqualSubPurpose" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="RgltnStartDate" Type="DateTime" Precision="0" />
+          <Property Name="SourceQualType" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="SourceSystemRef" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SourceURLRef" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SourceURLLinkType" Type="Int32" />
+          <Property Name="OccupationalIndicator" Type="Int32" />
+          <Property Name="AccessHEIndicator" Type="Int32" />
+          <Property Name="KeySkillsIndicator" Type="Int32" />
+          <Property Name="FunctionalSkillsIndicator" Type="Int32" />
+          <Property Name="GCEIndicator" Type="Int32" />
+          <Property Name="GCSEIndicator" Type="Int32" />
+          <Property Name="ASLevelIndicator" Type="Int32" />
+          <Property Name="A2LevelIndicator" Type="Int32" />
+          <Property Name="ALevelIndicator" Type="Int32" />
+          <Property Name="QCFIndicator" Type="Int32" />
+          <Property Name="QCFDiplomaIndicator" Type="Int32" />
+          <Property Name="QCFCertificateIndicator" Type="Int32" />
+          <Property Name="EFAEnglishGCSE" Type="Int32" />
+          <Property Name="EFAMathsGCSE" Type="Int32" />
+          <Property Name="EFACOFType" Type="Int32" />
+          <Property Name="SFAFundedIndicator" Type="Int32" />
+          <Property Name="DanceAndDramaIndicator" Type="Int32" />
+          <Property Name="AvailabiltyStatus" Type="Int32" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LearnDirectClassSystemCode1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="LearnDirectClassSystemCode2" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="LearnDirectClassSystemCode3" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="RegulatedCreditValue" Type="Int32" />
+          <Property Name="SectorSubjectAreaTier1" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="SectorSubjectAreaTier2" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="MI_NotionalNVQLevel" Type="Int32" />
+          <Property Name="MI_NotionalNVQLevelv2" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="GuidedLearningHours" Type="Int32" />
+          <Property Name="DirectStudyHours" Type="Int32" />
+          <Property Name="DedicatedAssessmentHours" Type="Int32" />
+          <Property Name="TotalQualificationTime" Type="Int32" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_AnnualValue" Relationship="Self.FK_CoreAnnualValue_CoreLearningDelivery" FromRole="LARS_LearningDelivery" ToRole="LARS_AnnualValue" />
+          <NavigationProperty Name="LARS_FrameworkAims" Relationship="Self.FK_CoreFrameworkAims_CoreLearningDelivery" FromRole="LARS_LearningDelivery" ToRole="LARS_FrameworkAims" />
+          <NavigationProperty Name="LARS_Funding" Relationship="Self.FK_CoreFunding_CoreLearningDelivery" FromRole="LARS_LearningDelivery" ToRole="LARS_Funding" />
+          <NavigationProperty Name="LARS_LearningDeliveryCategory" Relationship="Self.FK_CoreLearningDeliveryCategory_CoreLearningDelivery" FromRole="LARS_LearningDelivery" ToRole="LARS_LearningDeliveryCategory" />
+          <NavigationProperty Name="LARS_Section96" Relationship="Self.FK_CoreSection96_CoreLearningDelivery" FromRole="LARS_LearningDelivery" ToRole="LARS_Section96" />
+          <NavigationProperty Name="LARS_StandardAims" Relationship="Self.FK_CoreStandardAims_CoreLearningDelivery" FromRole="LARS_LearningDelivery" ToRole="LARS_StandardAims" />
+          <NavigationProperty Name="LARS_SupersedingAims" Relationship="Self.FK_CoreSupersedingAims_CoreLearningDelivery" FromRole="LARS_LearningDelivery" ToRole="LARS_SupersedingAims" />
+          <NavigationProperty Name="LARS_SupersedingAims1" Relationship="Self.FK_CoreSupersedingAims_CoreLearningDelivery1" FromRole="LARS_LearningDelivery" ToRole="LARS_SupersedingAims" />
+          <NavigationProperty Name="LARS_Validity" Relationship="Self.FK_CoreValidity_CoreLearningDelivery" FromRole="LARS_LearningDelivery" ToRole="LARS_Validity" />
+        </EntityType>
+        <EntityType Name="LARS_LearningDeliveryCategory">
+          <Key>
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="CategoryRef" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="LearnAimRef" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CategoryRef" Type="Int32" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_LearningDelivery" Relationship="Self.FK_CoreLearningDeliveryCategory_CoreLearningDelivery" FromRole="LARS_LearningDeliveryCategory" ToRole="LARS_LearningDelivery" />
+        </EntityType>
+        <EntityType Name="LARS_Section96">
+          <Key>
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="LearnAimRef" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="Section96ApprovalStatus" Type="Int32" />
+          <Property Name="Section96ApprovalStartDate" Type="DateTime" Precision="0" />
+          <Property Name="Section96ReviewDate" Type="DateTime" Precision="0" />
+          <Property Name="Section96ValidPre16" Type="Int32" />
+          <Property Name="Section96Valid16to18" Type="Int32" />
+          <Property Name="Section96Valid18plus" Type="Int32" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_LearningDelivery" Relationship="Self.FK_CoreSection96_CoreLearningDelivery" FromRole="LARS_Section96" ToRole="LARS_LearningDelivery" />
+        </EntityType>
+        <EntityType Name="LARS_Standard">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+          </Key>
+          <Property Name="StandardCode" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="StandardName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="StandardSectorCode" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="NotionalEndLevel" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Precision="0" />
+          <Property Name="LastDateStarts" Type="DateTime" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="URLLink" Type="String" MaxLength="1200" FixedLength="false" Unicode="false" />
+          <Property Name="SectorSubjectAreaTier1" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="SectorSubjectAreaTier2" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="IntegratedDegreeStandard" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_StandardAims" Relationship="Self.FK_CoreStandardAims_CoreStandard" FromRole="LARS_Standard" ToRole="LARS_StandardAims" />
+          <NavigationProperty Name="LARS_StandardCommonComponent" Relationship="Self.FK_CoreStandardCommonComponent_CoreStandard" FromRole="LARS_Standard" ToRole="LARS_StandardCommonComponent" />
+          <NavigationProperty Name="LARS_StandardFunding" Relationship="Self.FK_CoreStandardFunding_CoreStandard" FromRole="LARS_Standard" ToRole="LARS_StandardFunding" />
+          <NavigationProperty Name="LARS_StandardValidity" Relationship="Self.FK_CoreStandardValidity_CoreStandard" FromRole="LARS_Standard" ToRole="LARS_StandardValidity" />
+        </EntityType>
+        <EntityType Name="LARS_StandardAims">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="StandardCode" Type="Int32" Nullable="false" />
+          <Property Name="LearnAimRef" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="StandardComponentType" Type="Int32" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_LearningDelivery" Relationship="Self.FK_CoreStandardAims_CoreLearningDelivery" FromRole="LARS_StandardAims" ToRole="LARS_LearningDelivery" />
+          <NavigationProperty Name="LARS_Standard" Relationship="Self.FK_CoreStandardAims_CoreStandard" FromRole="LARS_StandardAims" ToRole="LARS_Standard" />
+        </EntityType>
+        <EntityType Name="LARS_StandardCommonComponent">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+            <PropertyRef Name="CommonComponent" />
+          </Key>
+          <Property Name="StandardCode" Type="Int32" Nullable="false" />
+          <Property Name="CommonComponent" Type="Int32" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="MinLevel" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_Standard" Relationship="Self.FK_CoreStandardCommonComponent_CoreStandard" FromRole="LARS_StandardCommonComponent" ToRole="LARS_Standard" />
+        </EntityType>
+        <EntityType Name="LARS_StandardFunding">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+            <PropertyRef Name="FundingCategory" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="StandardCode" Type="Int32" Nullable="false" />
+          <Property Name="FundingCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="BandNumber" Type="Int32" />
+          <Property Name="CoreGovContributionCap" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="C1618Incentive" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="SmallBusinessIncentive" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="AchievementIncentive" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="FundableWithoutEmployer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_Standard" Relationship="Self.FK_CoreStandardFunding_CoreStandard" FromRole="LARS_StandardFunding" ToRole="LARS_Standard" />
+        </EntityType>
+        <EntityType Name="LARS_StandardMetaData">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+          </Key>
+          <Property Name="StandardCode" Type="Int32" Nullable="false" />
+          <Property Name="RoleOverview" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="JobRoles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EntryRequirements" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Learning" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Qualifications" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProfessionalRegistration" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EffectiveFrom" Type="DateTime" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_StandardPdfLink">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+            <PropertyRef Name="EffectiveFrom" />
+          </Key>
+          <Property Name="StandardCode" Type="Int32" Nullable="false" />
+          <Property Name="StandardPdfURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AssessmentPlanPdfURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_StandardValidity">
+          <Key>
+            <PropertyRef Name="StandardCode" />
+            <PropertyRef Name="ValidityCategory" />
+            <PropertyRef Name="StartDate" />
+          </Key>
+          <Property Name="StandardCode" Type="Int32" Nullable="false" />
+          <Property Name="ValidityCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastNewStartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_Standard" Relationship="Self.FK_CoreStandardValidity_CoreStandard" FromRole="LARS_StandardValidity" ToRole="LARS_Standard" />
+        </EntityType>
+        <EntityType Name="LARS_SupersedingAims">
+          <Key>
+            <PropertyRef Name="OldLearnAimRef" />
+            <PropertyRef Name="NewLearnAimRef" />
+          </Key>
+          <Property Name="OldLearnAimRef" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NewLearnAimRef" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_LearningDelivery" Relationship="Self.FK_CoreSupersedingAims_CoreLearningDelivery" FromRole="LARS_SupersedingAims" ToRole="LARS_LearningDelivery" />
+          <NavigationProperty Name="LARS_LearningDelivery1" Relationship="Self.FK_CoreSupersedingAims_CoreLearningDelivery1" FromRole="LARS_SupersedingAims" ToRole="LARS_LearningDelivery" />
+        </EntityType>
+        <EntityType Name="LARS_SupersedingFrameworks">
+          <Key>
+            <PropertyRef Name="OldFworkCode" />
+            <PropertyRef Name="OldProgType" />
+            <PropertyRef Name="OldPwayCode" />
+            <PropertyRef Name="NewFworkCode" />
+            <PropertyRef Name="NewProgType" />
+            <PropertyRef Name="NewPwayCode" />
+          </Key>
+          <Property Name="OldFworkCode" Type="Int32" Nullable="false" />
+          <Property Name="OldProgType" Type="Int32" Nullable="false" />
+          <Property Name="OldPwayCode" Type="Int32" Nullable="false" />
+          <Property Name="NewFworkCode" Type="Int32" Nullable="false" />
+          <Property Name="NewProgType" Type="Int32" Nullable="false" />
+          <Property Name="NewPwayCode" Type="Int32" Nullable="false" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_Framework" Relationship="Self.FK_CoreSupersedingFrameworks_CoreFramework_New" FromRole="LARS_SupersedingFrameworks" ToRole="LARS_Framework" />
+          <NavigationProperty Name="LARS_Framework1" Relationship="Self.FK_CoreSupersedingFrameworks_CoreFramework_Old" FromRole="LARS_SupersedingFrameworks" ToRole="LARS_Framework" />
+        </EntityType>
+        <EntityType Name="LARS_UnitQualificationRelationship">
+          <Key>
+            <PropertyRef Name="UnitLearnAimRef" />
+            <PropertyRef Name="QualificationLearnAimRef" />
+          </Key>
+          <Property Name="UnitLearnAimRef" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QualificationLearnAimRef" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EffectiveTo" Type="DateTime" Precision="0" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LARS_Validity">
+          <Key>
+            <PropertyRef Name="LearnAimRef" />
+            <PropertyRef Name="ValidityCategory" />
+            <PropertyRef Name="StartDate" />
+          </Key>
+          <Property Name="LearnAimRef" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ValidityCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="LastNewStartDate" Type="DateTime" Precision="0" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LARS_LearningDelivery" Relationship="Self.FK_CoreValidity_CoreLearningDelivery" FromRole="LARS_Validity" ToRole="LARS_LearningDelivery" />
+        </EntityType>
+        <EntityType Name="LARS_Version">
+          <Key>
+            <PropertyRef Name="MajorNumber" />
+            <PropertyRef Name="MinorNumber" />
+            <PropertyRef Name="MaintenanceNumber" />
+          </Key>
+          <Property Name="MajorNumber" Type="Int32" Nullable="false" />
+          <Property Name="MinorNumber" Type="Int32" Nullable="false" />
+          <Property Name="MaintenanceNumber" Type="Int32" Nullable="false" />
+          <Property Name="MainDataSchemaName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="RefDataSchemaName" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="ActivationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Created_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_On" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Modified_By" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CoreAnnualValue_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_AnnualValue" Type="Self.LARS_AnnualValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_AnnualValue">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreSupersedingFrameworks_CoreFramework_New">
+          <End Role="LARS_Framework" Type="Self.LARS_Framework" Multiplicity="1" />
+          <End Role="LARS_SupersedingFrameworks" Type="Self.LARS_SupersedingFrameworks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_Framework">
+              <PropertyRef Name="FworkCode" />
+              <PropertyRef Name="ProgType" />
+              <PropertyRef Name="PwayCode" />
+            </Principal>
+            <Dependent Role="LARS_SupersedingFrameworks">
+              <PropertyRef Name="NewFworkCode" />
+              <PropertyRef Name="NewProgType" />
+              <PropertyRef Name="NewPwayCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreSupersedingFrameworks_CoreFramework_Old">
+          <End Role="LARS_Framework" Type="Self.LARS_Framework" Multiplicity="1" />
+          <End Role="LARS_SupersedingFrameworks" Type="Self.LARS_SupersedingFrameworks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_Framework">
+              <PropertyRef Name="FworkCode" />
+              <PropertyRef Name="ProgType" />
+              <PropertyRef Name="PwayCode" />
+            </Principal>
+            <Dependent Role="LARS_SupersedingFrameworks">
+              <PropertyRef Name="OldFworkCode" />
+              <PropertyRef Name="OldProgType" />
+              <PropertyRef Name="OldPwayCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreFrameworkAims_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_FrameworkAims" Type="Self.LARS_FrameworkAims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_FrameworkAims">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreFunding_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_Funding" Type="Self.LARS_Funding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_Funding">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreLearningDeliveryCategory_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_LearningDeliveryCategory" Type="Self.LARS_LearningDeliveryCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_LearningDeliveryCategory">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreSection96_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_Section96" Type="Self.LARS_Section96" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_Section96">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreStandardAims_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_StandardAims" Type="Self.LARS_StandardAims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_StandardAims">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreSupersedingAims_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_SupersedingAims" Type="Self.LARS_SupersedingAims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_SupersedingAims">
+              <PropertyRef Name="OldLearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreSupersedingAims_CoreLearningDelivery1">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_SupersedingAims" Type="Self.LARS_SupersedingAims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_SupersedingAims">
+              <PropertyRef Name="NewLearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreValidity_CoreLearningDelivery">
+          <End Role="LARS_LearningDelivery" Type="Self.LARS_LearningDelivery" Multiplicity="1" />
+          <End Role="LARS_Validity" Type="Self.LARS_Validity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_LearningDelivery">
+              <PropertyRef Name="LearnAimRef" />
+            </Principal>
+            <Dependent Role="LARS_Validity">
+              <PropertyRef Name="LearnAimRef" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreStandardAims_CoreStandard">
+          <End Role="LARS_Standard" Type="Self.LARS_Standard" Multiplicity="1" />
+          <End Role="LARS_StandardAims" Type="Self.LARS_StandardAims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_Standard">
+              <PropertyRef Name="StandardCode" />
+            </Principal>
+            <Dependent Role="LARS_StandardAims">
+              <PropertyRef Name="StandardCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreStandardCommonComponent_CoreStandard">
+          <End Role="LARS_Standard" Type="Self.LARS_Standard" Multiplicity="1" />
+          <End Role="LARS_StandardCommonComponent" Type="Self.LARS_StandardCommonComponent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_Standard">
+              <PropertyRef Name="StandardCode" />
+            </Principal>
+            <Dependent Role="LARS_StandardCommonComponent">
+              <PropertyRef Name="StandardCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreStandardFunding_CoreStandard">
+          <End Role="LARS_Standard" Type="Self.LARS_Standard" Multiplicity="1" />
+          <End Role="LARS_StandardFunding" Type="Self.LARS_StandardFunding" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_Standard">
+              <PropertyRef Name="StandardCode" />
+            </Principal>
+            <Dependent Role="LARS_StandardFunding">
+              <PropertyRef Name="StandardCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreStandardValidity_CoreStandard">
+          <End Role="LARS_Standard" Type="Self.LARS_Standard" Multiplicity="1" />
+          <End Role="LARS_StandardValidity" Type="Self.LARS_StandardValidity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LARS_Standard">
+              <PropertyRef Name="StandardCode" />
+            </Principal>
+            <Dependent Role="LARS_StandardValidity">
+              <PropertyRef Name="StandardCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LARSContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LARS_AnnualValue" EntityType="Self.LARS_AnnualValue" />
+          <EntitySet Name="LARS_ApprenticeshipFunding" EntityType="Self.LARS_ApprenticeshipFunding" />
+          <EntitySet Name="LARS_DataGeneration" EntityType="Self.LARS_DataGeneration" />
+          <EntitySet Name="LARS_Framework" EntityType="Self.LARS_Framework" />
+          <EntitySet Name="LARS_FrameworkAims" EntityType="Self.LARS_FrameworkAims" />
+          <EntitySet Name="LARS_FrameworkCmnComp" EntityType="Self.LARS_FrameworkCmnComp" />
+          <EntitySet Name="LARS_FrameworkMetaData" EntityType="Self.LARS_FrameworkMetaData" />
+          <EntitySet Name="LARS_Funding" EntityType="Self.LARS_Funding" />
+          <EntitySet Name="LARS_LearningDelivery" EntityType="Self.LARS_LearningDelivery" />
+          <EntitySet Name="LARS_LearningDeliveryCategory" EntityType="Self.LARS_LearningDeliveryCategory" />
+          <EntitySet Name="LARS_Section96" EntityType="Self.LARS_Section96" />
+          <EntitySet Name="LARS_Standard" EntityType="Self.LARS_Standard" />
+          <EntitySet Name="LARS_StandardAims" EntityType="Self.LARS_StandardAims" />
+          <EntitySet Name="LARS_StandardCommonComponent" EntityType="Self.LARS_StandardCommonComponent" />
+          <EntitySet Name="LARS_StandardFunding" EntityType="Self.LARS_StandardFunding" />
+          <EntitySet Name="LARS_StandardMetaData" EntityType="Self.LARS_StandardMetaData" />
+          <EntitySet Name="LARS_StandardPdfLink" EntityType="Self.LARS_StandardPdfLink" />
+          <EntitySet Name="LARS_StandardValidity" EntityType="Self.LARS_StandardValidity" />
+          <EntitySet Name="LARS_SupersedingAims" EntityType="Self.LARS_SupersedingAims" />
+          <EntitySet Name="LARS_SupersedingFrameworks" EntityType="Self.LARS_SupersedingFrameworks" />
+          <EntitySet Name="LARS_UnitQualificationRelationship" EntityType="Self.LARS_UnitQualificationRelationship" />
+          <EntitySet Name="LARS_Validity" EntityType="Self.LARS_Validity" />
+          <EntitySet Name="LARS_Version" EntityType="Self.LARS_Version" />
+          <AssociationSet Name="FK_CoreAnnualValue_CoreLearningDelivery" Association="Self.FK_CoreAnnualValue_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_AnnualValue" EntitySet="LARS_AnnualValue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreSupersedingFrameworks_CoreFramework_New" Association="Self.FK_CoreSupersedingFrameworks_CoreFramework_New">
+            <End Role="LARS_Framework" EntitySet="LARS_Framework" />
+            <End Role="LARS_SupersedingFrameworks" EntitySet="LARS_SupersedingFrameworks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreSupersedingFrameworks_CoreFramework_Old" Association="Self.FK_CoreSupersedingFrameworks_CoreFramework_Old">
+            <End Role="LARS_Framework" EntitySet="LARS_Framework" />
+            <End Role="LARS_SupersedingFrameworks" EntitySet="LARS_SupersedingFrameworks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreFrameworkAims_CoreLearningDelivery" Association="Self.FK_CoreFrameworkAims_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_FrameworkAims" EntitySet="LARS_FrameworkAims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreFunding_CoreLearningDelivery" Association="Self.FK_CoreFunding_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_Funding" EntitySet="LARS_Funding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreLearningDeliveryCategory_CoreLearningDelivery" Association="Self.FK_CoreLearningDeliveryCategory_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_LearningDeliveryCategory" EntitySet="LARS_LearningDeliveryCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreSection96_CoreLearningDelivery" Association="Self.FK_CoreSection96_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_Section96" EntitySet="LARS_Section96" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreStandardAims_CoreLearningDelivery" Association="Self.FK_CoreStandardAims_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_StandardAims" EntitySet="LARS_StandardAims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreSupersedingAims_CoreLearningDelivery" Association="Self.FK_CoreSupersedingAims_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_SupersedingAims" EntitySet="LARS_SupersedingAims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreSupersedingAims_CoreLearningDelivery1" Association="Self.FK_CoreSupersedingAims_CoreLearningDelivery1">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_SupersedingAims" EntitySet="LARS_SupersedingAims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreValidity_CoreLearningDelivery" Association="Self.FK_CoreValidity_CoreLearningDelivery">
+            <End Role="LARS_LearningDelivery" EntitySet="LARS_LearningDelivery" />
+            <End Role="LARS_Validity" EntitySet="LARS_Validity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreStandardAims_CoreStandard" Association="Self.FK_CoreStandardAims_CoreStandard">
+            <End Role="LARS_Standard" EntitySet="LARS_Standard" />
+            <End Role="LARS_StandardAims" EntitySet="LARS_StandardAims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreStandardCommonComponent_CoreStandard" Association="Self.FK_CoreStandardCommonComponent_CoreStandard">
+            <End Role="LARS_Standard" EntitySet="LARS_Standard" />
+            <End Role="LARS_StandardCommonComponent" EntitySet="LARS_StandardCommonComponent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreStandardFunding_CoreStandard" Association="Self.FK_CoreStandardFunding_CoreStandard">
+            <End Role="LARS_Standard" EntitySet="LARS_Standard" />
+            <End Role="LARS_StandardFunding" EntitySet="LARS_StandardFunding" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreStandardValidity_CoreStandard" Association="Self.FK_CoreStandardValidity_CoreStandard">
+            <End Role="LARS_Standard" EntitySet="LARS_Standard" />
+            <End Role="LARS_StandardValidity" EntitySet="LARS_StandardValidity" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DCTLARSModelStoreContainer" CdmEntityContainer="LARSContext">
+          <EntitySetMapping Name="LARS_AnnualValue">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_AnnualValue">
+              <MappingFragment StoreEntitySet="LARS_AnnualValue">
+                <ScalarProperty Name="LearnAimRef" ColumnName="LearnAimRef" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="BasicSkills" ColumnName="BasicSkills" />
+                <ScalarProperty Name="BasicSkillsBroadType" ColumnName="BasicSkillsBroadType" />
+                <ScalarProperty Name="BasicSkillsType" ColumnName="BasicSkillsType" />
+                <ScalarProperty Name="BasicSkillsParticipation" ColumnName="BasicSkillsParticipation" />
+                <ScalarProperty Name="FullLevel2EntitlementCategory" ColumnName="FullLevel2EntitlementCategory" />
+                <ScalarProperty Name="FullLevel2Percent" ColumnName="FullLevel2Percent" />
+                <ScalarProperty Name="FullLevel3EntitlementCategory" ColumnName="FullLevel3EntitlementCategory" />
+                <ScalarProperty Name="FullLevel3Percent" ColumnName="FullLevel3Percent" />
+                <ScalarProperty Name="MI_FullLevel2" ColumnName="MI_FullLevel2" />
+                <ScalarProperty Name="MI_FullLevel2Percent" ColumnName="MI_FullLevel2Percent" />
+                <ScalarProperty Name="MI_FullLevel3" ColumnName="MI_FullLevel3" />
+                <ScalarProperty Name="MI_FullLevel3Percent" ColumnName="MI_FullLevel3Percent" />
+                <ScalarProperty Name="OfQualValid19Plus" ColumnName="OfQualValid19Plus" />
+                <ScalarProperty Name="SfaApprovalStatus" ColumnName="SfaApprovalStatus" />
+                <ScalarProperty Name="UKCESSector" ColumnName="UKCESSector" />
+                <ScalarProperty Name="UKCESSubSector" ColumnName="UKCESSubSector" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_ApprenticeshipFunding">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_ApprenticeshipFunding">
+              <MappingFragment StoreEntitySet="LARS_ApprenticeshipFunding">
+                <ScalarProperty Name="ApprenticeshipType" ColumnName="ApprenticeshipType" />
+                <ScalarProperty Name="ApprenticeshipCode" ColumnName="ApprenticeshipCode" />
+                <ScalarProperty Name="ProgType" ColumnName="ProgType" />
+                <ScalarProperty Name="PwayCode" ColumnName="PwayCode" />
+                <ScalarProperty Name="FundingCategory" ColumnName="FundingCategory" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="BandNumber" ColumnName="BandNumber" />
+                <ScalarProperty Name="CoreGovContributionCap" ColumnName="CoreGovContributionCap" />
+                <ScalarProperty Name="C1618Incentive" ColumnName="1618Incentive" />
+                <ScalarProperty Name="C1618ProviderAdditionalPayment" ColumnName="1618ProviderAdditionalPayment" />
+                <ScalarProperty Name="C1618EmployerAdditionalPayment" ColumnName="1618EmployerAdditionalPayment" />
+                <ScalarProperty Name="C1618FrameworkUplift" ColumnName="1618FrameworkUplift" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="ReservedValue2" ColumnName="ReservedValue2" />
+                <ScalarProperty Name="ReservedValue3" ColumnName="ReservedValue3" />
+                <ScalarProperty Name="MaxEmployerLevyCap" ColumnName="MaxEmployerLevyCap" />
+                <ScalarProperty Name="FundableWithoutEmployer" ColumnName="FundableWithoutEmployer" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_DataGeneration">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_DataGeneration">
+              <MappingFragment StoreEntitySet="LARS_DataGeneration">
+                <ScalarProperty Name="DataGeneratedOn" ColumnName="DataGeneratedOn" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_Framework">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_Framework">
+              <MappingFragment StoreEntitySet="LARS_Framework">
+                <ScalarProperty Name="FworkCode" ColumnName="FworkCode" />
+                <ScalarProperty Name="ProgType" ColumnName="ProgType" />
+                <ScalarProperty Name="PwayCode" ColumnName="PwayCode" />
+                <ScalarProperty Name="PathwayName" ColumnName="PathwayName" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="SectorSubjectAreaTier1" ColumnName="SectorSubjectAreaTier1" />
+                <ScalarProperty Name="SectorSubjectAreaTier2" ColumnName="SectorSubjectAreaTier2" />
+                <ScalarProperty Name="DataSource" ColumnName="DataSource" />
+                <ScalarProperty Name="NASTitle" ColumnName="NASTitle" />
+                <ScalarProperty Name="ImplementDate" ColumnName="ImplementDate" />
+                <ScalarProperty Name="IssuingAuthorityTitle" ColumnName="IssuingAuthorityTitle" />
+                <ScalarProperty Name="IssuingAuthority" ColumnName="IssuingAuthority" />
+                <ScalarProperty Name="DataReceivedDate" ColumnName="DataReceivedDate" />
+                <ScalarProperty Name="MI_FullLevel2" ColumnName="MI_FullLevel2" />
+                <ScalarProperty Name="MI_FullLevel2Percent" ColumnName="MI_FullLevel2Percent" />
+                <ScalarProperty Name="MI_FullLevel3" ColumnName="MI_FullLevel3" />
+                <ScalarProperty Name="MI_FullLevel3Percent" ColumnName="MI_FullLevel3Percent" />
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_FrameworkAims">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_FrameworkAims">
+              <MappingFragment StoreEntitySet="LARS_FrameworkAims">
+                <ScalarProperty Name="FworkCode" ColumnName="FworkCode" />
+                <ScalarProperty Name="ProgType" ColumnName="ProgType" />
+                <ScalarProperty Name="PwayCode" ColumnName="PwayCode" />
+                <ScalarProperty Name="LearnAimRef" ColumnName="LearnAimRef" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="FrameworkComponentType" ColumnName="FrameworkComponentType" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_FrameworkCmnComp">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_FrameworkCmnComp">
+              <MappingFragment StoreEntitySet="LARS_FrameworkCmnComp">
+                <ScalarProperty Name="FworkCode" ColumnName="FworkCode" />
+                <ScalarProperty Name="ProgType" ColumnName="ProgType" />
+                <ScalarProperty Name="PwayCode" ColumnName="PwayCode" />
+                <ScalarProperty Name="CommonComponent" ColumnName="CommonComponent" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="MinLevel" ColumnName="MinLevel" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_FrameworkMetaData">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_FrameworkMetaData">
+              <MappingFragment StoreEntitySet="LARS_FrameworkMetaData">
+                <ScalarProperty Name="FworkCode" ColumnName="FworkCode" />
+                <ScalarProperty Name="ProgType" ColumnName="ProgType" />
+                <ScalarProperty Name="PwayCode" ColumnName="PwayCode" />
+                <ScalarProperty Name="Roles" ColumnName="Roles" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_Funding">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_Funding">
+              <MappingFragment StoreEntitySet="LARS_Funding">
+                <ScalarProperty Name="LearnAimRef" ColumnName="LearnAimRef" />
+                <ScalarProperty Name="FundingCategory" ColumnName="FundingCategory" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="RateWeighted" ColumnName="RateWeighted" />
+                <ScalarProperty Name="RateUnWeighted" ColumnName="RateUnWeighted" />
+                <ScalarProperty Name="WeightingFactor" ColumnName="WeightingFactor" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_LearningDelivery">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_LearningDelivery">
+              <MappingFragment StoreEntitySet="LARS_LearningDelivery">
+                <ScalarProperty Name="LearnAimRef" ColumnName="LearnAimRef" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="LearnAimRefTitle" ColumnName="LearnAimRefTitle" />
+                <ScalarProperty Name="LearnAimRefType" ColumnName="LearnAimRefType" />
+                <ScalarProperty Name="NotionalNVQLevel" ColumnName="NotionalNVQLevel" />
+                <ScalarProperty Name="NotionalNVQLevelv2" ColumnName="NotionalNVQLevelv2" />
+                <ScalarProperty Name="AwardOrgAimRef" ColumnName="AwardOrgAimRef" />
+                <ScalarProperty Name="CertificationEndDate" ColumnName="CertificationEndDate" />
+                <ScalarProperty Name="OperationalStartDate" ColumnName="OperationalStartDate" />
+                <ScalarProperty Name="OperationalEndDate" ColumnName="OperationalEndDate" />
+                <ScalarProperty Name="EnglandFEHEStatus" ColumnName="EnglandFEHEStatus" />
+                <ScalarProperty Name="CreditBasedFwkType" ColumnName="CreditBasedFwkType" />
+                <ScalarProperty Name="QltyAssAgencyType" ColumnName="QltyAssAgencyType" />
+                <ScalarProperty Name="OfQualGlhMin" ColumnName="OfQualGlhMin" />
+                <ScalarProperty Name="OfQualGlhMax" ColumnName="OfQualGlhMax" />
+                <ScalarProperty Name="DiplomaLinesOfLearning" ColumnName="DiplomaLinesOfLearning" />
+                <ScalarProperty Name="FrameworkCommonComponent" ColumnName="FrameworkCommonComponent" />
+                <ScalarProperty Name="LTRCPWithProviderUpliftFactor" ColumnName="LTRCPWithProviderUpliftFactor" />
+                <ScalarProperty Name="EntrySubLevel" ColumnName="EntrySubLevel" />
+                <ScalarProperty Name="SuccessRateMapCode" ColumnName="SuccessRateMapCode" />
+                <ScalarProperty Name="AccreditiedNotDfESApproved" ColumnName="AccreditiedNotDfESApproved" />
+                <ScalarProperty Name="AccreditiedMayPossDfESApproved" ColumnName="AccreditiedMayPossDfESApproved" />
+                <ScalarProperty Name="JointInvestmentProgrammeOnly" ColumnName="JointInvestmentProgrammeOnly" />
+                <ScalarProperty Name="OLASSOnly" ColumnName="OLASSOnly" />
+                <ScalarProperty Name="UnemployedOnly" ColumnName="UnemployedOnly" />
+                <ScalarProperty Name="IndependentLivingSkills" ColumnName="IndependentLivingSkills" />
+                <ScalarProperty Name="AdditionalOrSpecialistLearning" ColumnName="AdditionalOrSpecialistLearning" />
+                <ScalarProperty Name="EnglPrscID" ColumnName="EnglPrscID" />
+                <ScalarProperty Name="Vocational" ColumnName="Vocational" />
+                <ScalarProperty Name="AwardOrgCode" ColumnName="AwardOrgCode" />
+                <ScalarProperty Name="UnitType" ColumnName="UnitType" />
+                <ScalarProperty Name="LearningDeliveryGenre" ColumnName="LearningDeliveryGenre" />
+                <ScalarProperty Name="ApprovedEmployerSchemeFramework" ColumnName="ApprovedEmployerSchemeFramework" />
+                <ScalarProperty Name="FrameworkCompletionClassCode" ColumnName="FrameworkCompletionClassCode" />
+                <ScalarProperty Name="OfQualOfferedEngland" ColumnName="OfQualOfferedEngland" />
+                <ScalarProperty Name="OfqualPurpose" ColumnName="OfqualPurpose" />
+                <ScalarProperty Name="OfqualSubPurpose" ColumnName="OfqualSubPurpose" />
+                <ScalarProperty Name="RgltnStartDate" ColumnName="RgltnStartDate" />
+                <ScalarProperty Name="SourceQualType" ColumnName="SourceQualType" />
+                <ScalarProperty Name="SourceSystemRef" ColumnName="SourceSystemRef" />
+                <ScalarProperty Name="SourceURLRef" ColumnName="SourceURLRef" />
+                <ScalarProperty Name="SourceURLLinkType" ColumnName="SourceURLLinkType" />
+                <ScalarProperty Name="OccupationalIndicator" ColumnName="OccupationalIndicator" />
+                <ScalarProperty Name="AccessHEIndicator" ColumnName="AccessHEIndicator" />
+                <ScalarProperty Name="KeySkillsIndicator" ColumnName="KeySkillsIndicator" />
+                <ScalarProperty Name="FunctionalSkillsIndicator" ColumnName="FunctionalSkillsIndicator" />
+                <ScalarProperty Name="GCEIndicator" ColumnName="GCEIndicator" />
+                <ScalarProperty Name="GCSEIndicator" ColumnName="GCSEIndicator" />
+                <ScalarProperty Name="ASLevelIndicator" ColumnName="ASLevelIndicator" />
+                <ScalarProperty Name="A2LevelIndicator" ColumnName="A2LevelIndicator" />
+                <ScalarProperty Name="ALevelIndicator" ColumnName="ALevelIndicator" />
+                <ScalarProperty Name="QCFIndicator" ColumnName="QCFIndicator" />
+                <ScalarProperty Name="QCFDiplomaIndicator" ColumnName="QCFDiplomaIndicator" />
+                <ScalarProperty Name="QCFCertificateIndicator" ColumnName="QCFCertificateIndicator" />
+                <ScalarProperty Name="EFAEnglishGCSE" ColumnName="EFAEnglishGCSE" />
+                <ScalarProperty Name="EFAMathsGCSE" ColumnName="EFAMathsGCSE" />
+                <ScalarProperty Name="EFACOFType" ColumnName="EFACOFType" />
+                <ScalarProperty Name="SFAFundedIndicator" ColumnName="SFAFundedIndicator" />
+                <ScalarProperty Name="DanceAndDramaIndicator" ColumnName="DanceAndDramaIndicator" />
+                <ScalarProperty Name="AvailabiltyStatus" ColumnName="AvailabiltyStatus" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="LearnDirectClassSystemCode1" ColumnName="LearnDirectClassSystemCode1" />
+                <ScalarProperty Name="LearnDirectClassSystemCode2" ColumnName="LearnDirectClassSystemCode2" />
+                <ScalarProperty Name="LearnDirectClassSystemCode3" ColumnName="LearnDirectClassSystemCode3" />
+                <ScalarProperty Name="RegulatedCreditValue" ColumnName="RegulatedCreditValue" />
+                <ScalarProperty Name="SectorSubjectAreaTier1" ColumnName="SectorSubjectAreaTier1" />
+                <ScalarProperty Name="SectorSubjectAreaTier2" ColumnName="SectorSubjectAreaTier2" />
+                <ScalarProperty Name="MI_NotionalNVQLevel" ColumnName="MI_NotionalNVQLevel" />
+                <ScalarProperty Name="MI_NotionalNVQLevelv2" ColumnName="MI_NotionalNVQLevelv2" />
+                <ScalarProperty Name="GuidedLearningHours" ColumnName="GuidedLearningHours" />
+                <ScalarProperty Name="DirectStudyHours" ColumnName="DirectStudyHours" />
+                <ScalarProperty Name="DedicatedAssessmentHours" ColumnName="DedicatedAssessmentHours" />
+                <ScalarProperty Name="TotalQualificationTime" ColumnName="TotalQualificationTime" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_LearningDeliveryCategory">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_LearningDeliveryCategory">
+              <MappingFragment StoreEntitySet="LARS_LearningDeliveryCategory">
+                <ScalarProperty Name="LearnAimRef" ColumnName="LearnAimRef" />
+                <ScalarProperty Name="CategoryRef" ColumnName="CategoryRef" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_Section96">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_Section96">
+              <MappingFragment StoreEntitySet="LARS_Section96">
+                <ScalarProperty Name="LearnAimRef" ColumnName="LearnAimRef" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="Section96ApprovalStatus" ColumnName="Section96ApprovalStatus" />
+                <ScalarProperty Name="Section96ApprovalStartDate" ColumnName="Section96ApprovalStartDate" />
+                <ScalarProperty Name="Section96ReviewDate" ColumnName="Section96ReviewDate" />
+                <ScalarProperty Name="Section96ValidPre16" ColumnName="Section96ValidPre16" />
+                <ScalarProperty Name="Section96Valid16to18" ColumnName="Section96Valid16to18" />
+                <ScalarProperty Name="Section96Valid18plus" ColumnName="Section96Valid18plus" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_Standard">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_Standard">
+              <MappingFragment StoreEntitySet="LARS_Standard">
+                <ScalarProperty Name="StandardCode" ColumnName="StandardCode" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="StandardName" ColumnName="StandardName" />
+                <ScalarProperty Name="StandardSectorCode" ColumnName="StandardSectorCode" />
+                <ScalarProperty Name="NotionalEndLevel" ColumnName="NotionalEndLevel" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="LastDateStarts" ColumnName="LastDateStarts" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="URLLink" ColumnName="URLLink" />
+                <ScalarProperty Name="SectorSubjectAreaTier1" ColumnName="SectorSubjectAreaTier1" />
+                <ScalarProperty Name="SectorSubjectAreaTier2" ColumnName="SectorSubjectAreaTier2" />
+                <ScalarProperty Name="IntegratedDegreeStandard" ColumnName="IntegratedDegreeStandard" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_StandardAims">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_StandardAims">
+              <MappingFragment StoreEntitySet="LARS_StandardAims">
+                <ScalarProperty Name="StandardCode" ColumnName="StandardCode" />
+                <ScalarProperty Name="LearnAimRef" ColumnName="LearnAimRef" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="StandardComponentType" ColumnName="StandardComponentType" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_StandardCommonComponent">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_StandardCommonComponent">
+              <MappingFragment StoreEntitySet="LARS_StandardCommonComponent">
+                <ScalarProperty Name="StandardCode" ColumnName="StandardCode" />
+                <ScalarProperty Name="CommonComponent" ColumnName="CommonComponent" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="MinLevel" ColumnName="MinLevel" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_StandardFunding">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_StandardFunding">
+              <MappingFragment StoreEntitySet="LARS_StandardFunding">
+                <ScalarProperty Name="StandardCode" ColumnName="StandardCode" />
+                <ScalarProperty Name="FundingCategory" ColumnName="FundingCategory" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="BandNumber" ColumnName="BandNumber" />
+                <ScalarProperty Name="CoreGovContributionCap" ColumnName="CoreGovContributionCap" />
+                <ScalarProperty Name="C1618Incentive" ColumnName="1618Incentive" />
+                <ScalarProperty Name="SmallBusinessIncentive" ColumnName="SmallBusinessIncentive" />
+                <ScalarProperty Name="AchievementIncentive" ColumnName="AchievementIncentive" />
+                <ScalarProperty Name="FundableWithoutEmployer" ColumnName="FundableWithoutEmployer" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_StandardMetaData">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_StandardMetaData">
+              <MappingFragment StoreEntitySet="LARS_StandardMetaData">
+                <ScalarProperty Name="StandardCode" ColumnName="StandardCode" />
+                <ScalarProperty Name="RoleOverview" ColumnName="RoleOverview" />
+                <ScalarProperty Name="JobRoles" ColumnName="JobRoles" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="EntryRequirements" ColumnName="EntryRequirements" />
+                <ScalarProperty Name="Learning" ColumnName="Learning" />
+                <ScalarProperty Name="Qualifications" ColumnName="Qualifications" />
+                <ScalarProperty Name="ProfessionalRegistration" ColumnName="ProfessionalRegistration" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_StandardPdfLink">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_StandardPdfLink">
+              <MappingFragment StoreEntitySet="LARS_StandardPdfLink">
+                <ScalarProperty Name="StandardCode" ColumnName="StandardCode" />
+                <ScalarProperty Name="StandardPdfURL" ColumnName="StandardPdfURL" />
+                <ScalarProperty Name="AssessmentPlanPdfURL" ColumnName="AssessmentPlanPdfURL" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_StandardValidity">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_StandardValidity">
+              <MappingFragment StoreEntitySet="LARS_StandardValidity">
+                <ScalarProperty Name="StandardCode" ColumnName="StandardCode" />
+                <ScalarProperty Name="ValidityCategory" ColumnName="ValidityCategory" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="LastNewStartDate" ColumnName="LastNewStartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_SupersedingAims">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_SupersedingAims">
+              <MappingFragment StoreEntitySet="LARS_SupersedingAims">
+                <ScalarProperty Name="OldLearnAimRef" ColumnName="OldLearnAimRef" />
+                <ScalarProperty Name="NewLearnAimRef" ColumnName="NewLearnAimRef" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_SupersedingFrameworks">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_SupersedingFrameworks">
+              <MappingFragment StoreEntitySet="LARS_SupersedingFrameworks">
+                <ScalarProperty Name="OldFworkCode" ColumnName="OldFworkCode" />
+                <ScalarProperty Name="OldProgType" ColumnName="OldProgType" />
+                <ScalarProperty Name="OldPwayCode" ColumnName="OldPwayCode" />
+                <ScalarProperty Name="NewFworkCode" ColumnName="NewFworkCode" />
+                <ScalarProperty Name="NewProgType" ColumnName="NewProgType" />
+                <ScalarProperty Name="NewPwayCode" ColumnName="NewPwayCode" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_UnitQualificationRelationship">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_UnitQualificationRelationship">
+              <MappingFragment StoreEntitySet="LARS_UnitQualificationRelationship">
+                <ScalarProperty Name="UnitLearnAimRef" ColumnName="UnitLearnAimRef" />
+                <ScalarProperty Name="QualificationLearnAimRef" ColumnName="QualificationLearnAimRef" />
+                <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+                <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_Validity">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_Validity">
+              <MappingFragment StoreEntitySet="LARS_Validity">
+                <ScalarProperty Name="LearnAimRef" ColumnName="LearnAimRef" />
+                <ScalarProperty Name="ValidityCategory" ColumnName="ValidityCategory" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="LastNewStartDate" ColumnName="LastNewStartDate" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LARS_Version">
+            <EntityTypeMapping TypeName="DCT.LARS.Model.LARS_Version">
+              <MappingFragment StoreEntitySet="LARS_Version">
+                <ScalarProperty Name="MajorNumber" ColumnName="MajorNumber" />
+                <ScalarProperty Name="MinorNumber" ColumnName="MinorNumber" />
+                <ScalarProperty Name="MaintenanceNumber" ColumnName="MaintenanceNumber" />
+                <ScalarProperty Name="MainDataSchemaName" ColumnName="MainDataSchemaName" />
+                <ScalarProperty Name="RefDataSchemaName" ColumnName="RefDataSchemaName" />
+                <ScalarProperty Name="ActivationDate" ColumnName="ActivationDate" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Created_On" ColumnName="Created_On" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
